@@ -42,6 +42,13 @@
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+typedef struct
+{
+	GPIO_PinState current;
+	GPIO_PinState last;
+}GpioStateSave;
+
+GpioStateSave B1 = (1,1);
 
 /* USER CODE END PV */
 
@@ -98,6 +105,37 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+//	  GPIO_PinState B1 = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13);
+//
+//	  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,B1);
+//
+//	  B1.current = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13);
+//
+//	  if(B1.last == 1 && B1.current == 0)
+//	  {
+//		  HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_5);
+//
+//	  	  if(BlinkDelay = 500)
+//	  	  {
+//	  		BlinkDelay = 1000;
+//	  	  }
+//	  	  else
+//	  	  {
+//	  		BlinkDelay = 500;
+//	  	  }
+//	  }
+//	  B1.last = B1.current;
+//
+//	  static uint32_t timestamp = 0;
+//
+//	  if(timestamp <= HAL_GetTick())
+//	  {
+//		  timestamp = HAL_GetTick() + 500;//ms
+//
+//		  HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_5);
+//	  }
+
+
   }
   /* USER CODE END 3 */
 }
